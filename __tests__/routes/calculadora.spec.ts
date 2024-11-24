@@ -46,11 +46,11 @@ describe("Bateria de test de calculadora", () => {
     test("Operar en la calculadora", () => {
 
         expect(operar("suma", 10, 20)).toBe(30);
-        expect(operar("resta", 5, 2)).toBe(3);
+        expect(operar("restar", 5, 2)).toBe(3);
         expect(operar("suma", 5, 5)).toBe(10);
-        expect(operar("resta", 15, 5)).toBe(10);
+        expect(operar("restar", 15, 5)).toBe(10);
         expect(operar("suma", 15, 15)).toBe(30);
-        expect(operar("resta", 45, 15)).toBe(30);
+        expect(operar("restar", 45, 15)).toBe(30);
         expect(operar("suma", 1, 5)).not.toBe(0);
 
         let a: any = 1;
@@ -62,11 +62,11 @@ describe("Bateria de test de calculadora", () => {
 
         a = 1;
         b = undefined;
-        expect(() => operar("resta", a, b)).toThrowError("No se puede restar indefinidos");
+        expect(() => operar("restar", a, b)).toThrowError("No se puede restar indefinidos");
 
         expect(operar(undefined, 10, 20)).not.toBeDefined();
 
-        expect(operar("multiplicar", 10, 20)).not.toBeDefined();
+        expect(operar("multiplicar", 10, 20)).toBeDefined();
     });
 
 });
